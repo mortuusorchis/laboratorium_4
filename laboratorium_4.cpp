@@ -169,7 +169,7 @@ double poletrojkata(double a, double b) { // bez ; bo to ciało funkcji double !
 } */
 
 //****zadanie_6****
-#include <iostream>
+/* #include <iostream>
 using namespace std;
 
 void wyswietldzielniki(int n);
@@ -197,4 +197,237 @@ void wyswietldzielniki(int n) {
 		}
 	}
 	cout << endl;
+} */
+
+//****zadanie_7****
+
+/*#include <iostream>
+using namespace std;
+
+double srednia_wazona(double ocena1,double ocena2); // prototyp funkcji
+
+int main() {
+ double ocena1, ocena2;
+ cout << "Podaj pierwsza ocene: "; 
+ cin >> ocena1;
+ cout << "Podaj druga ocene: ";
+ cin >> ocena2;
+
+ double wynik = srednia_wazona(ocena1, ocena2); // wywołanie funkcji 
+ // przekazanie pobranych ocen do funkcji jako argumenty, zwrócony wynik jest zapisywany w zmiennej "wynik"
+ cout << "Srednia wazona dla podanych liczb wynosi " << wynik << endl;
+
+ return 0;
+}
+// definicja funkcji, tutaj jest rzeczywisty kod, który wykonuje funkcja
+ double srednia_wazona(double ocena1, double ocena2) // zmienne lokalne dostępne tylko wewnątrz tej funkcji
+ {
+  double waga1, waga2;
+
+  cout << "Podaj wage dla " << ocena1 << ": ";
+  cin >> waga1;
+  cout << "Podaj wage dla " << ocena2 << ": ";
+  cin >> waga2;
+
+  double srednia = (ocena1 * waga1 + ocena2 * waga2) / (waga1 + waga2);
+
+  return srednia;
+}
+*/
+
+//****zadanie_8****
+
+/*#include <iostream>
+using namespace std;
+
+double srednia_wazona(double ocena1,double ocena2); // prototyp funkcji
+
+int main() {
+	double ocena1, ocena2;
+	cout << "Podaj pierwsza ocene: "; 
+	cin >> ocena1;
+	cout << "Podaj druga ocena: ";
+	cin >> ocena2;
+	
+	double wynik = srednia_wazona(ocena1, ocena2); // wywołanie funkcji 
+	// przekazanie pobranych ocen do funkcji jako argumenty, zwrócony wynik jest zapisywany w zmiennej "wynik"
+	cout << "Srednia wazona dla podanych liczb wynosi " << wynik << endl;
+
+	return 0;
+}
+// definicja funkcji, tutaj jest rzeczywisty kod, który wykonuje funkcja
+double srednia_wazona(double ocena1, double ocena2) // zmienne lokalne dostępne tylko wewnątrz tej funkcji
+{ 
+	double waga1, waga2;
+
+	cout << "Podaj wage dla " << ocena1 << ": ";
+	cin >> waga1;
+	cout << "Podaj wage dla " << ocena2 << ": ";
+	cin >> waga2;
+
+	double srednia = (ocena1 * waga1 + ocena2 * waga2) / (waga1 + waga2);
+
+	return srednia;
+}*/
+
+//****zadanie_8****
+
+/*#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+void przeciwprostokatna(double bok1, double bok2);
+
+int main()
+{
+	double bok1, bok2;
+	cout << "Podaj dlugosc pierwszej przyprostokatnej: ";
+	cin >> bok1;
+	cout << "Podaj dlugosc drugiej przyprostokatnej: ";
+	cin >> bok2;
+
+	przeciwprostokatna(bok1, bok2);
+	
+	return 0;
+}
+
+void przeciwprostokatna(double bok1, double bok2) {
+	
+	double wynik = std::sqrt(bok1 * bok1 + bok2 * bok2);
+    cout << "Dlugosc przeciwprostokatnej wynosi: " << wynik << endl;
+}*/
+
+//****zadanie_9****
+/*#include <iostream>
+#include <string>
+using namespace std;
+
+// deklaracje funkcji -> funkcje przyjmują dwie liczby i zwracają potem wynik
+double dodawanie(double a, double b);
+double odejmowanie(double a, double b);
+double mnozenie(double a, double b);
+double dzielenie(double a, double b); // Ta funkcja ma w sobie zabezpieczenie
+
+int main() {
+	string slowo;
+	double a, b;
+	char znak;
+
+	while (true) {
+		cout << "Podaj wartosc a: ";
+		cin >> a;
+		cout << "Podaj wartosc b: ";
+		cin >> b;
+		cout << "Okresl jaka operacje chcesz wykonac, wybierz z podanych: (+, -, *, /): ";
+		cin >> znak;
+
+	
+
+		switch (znak) {
+		case '+': {
+			double wynikdodawania = dodawanie(a, b); // <-- Tradycyjne wywołanie funkcji
+			cout << "Wynik wynosi: " << wynikdodawania << endl;
+			break;
+		}
+		case '-': {
+			double wynikodejmowania = odejmowanie(a, b); // <-- Tradycyjne wywołanie funkcji
+			cout << "Wynik wynosi: " << wynikodejmowania << endl;
+			break;
+		}
+		case '*': {
+			double wynikmnozenia = mnozenie(a, b); // <-- Tradycyjne wywołanie funkcji
+			cout << "Wynik wynosi: " << wynikmnozenia << endl;
+			break;
+		}
+		case '/': {
+			double wynikdzielenia = dzielenie(a, b); // <-- Tradycyjne wywołanie funkcji
+			if (b != 0) {
+				cout << "Wynik wynosi: " << wynikdzielenia << endl;
+			}
+			break;
+		}
+		}
+
+		cout << "\nCzy chcesz zakonczyc dzialanie programu? (TAK/NIE): ";
+		cin >> slowo;
+
+		if (slowo == "TAK" || slowo == "tak") {
+			cout << "To juz koniec. " << endl;
+			return 0;
+		}
+	}
+	return 0;
+}
+
+// DEFINICJE FUNKCJI
+
+double dodawanie(double a, double b) {
+	return a + b; // Zwraca wynik dodawania
+}
+
+double odejmowanie(double a, double b) {
+	return a - b; // Zwraca wynik odejmowania
+}
+
+double mnozenie(double a, double b) {
+	return a * b; // Zwraca wynik mnożenia
+}
+
+double dzielenie(double a, double b) {
+	// Zgodnie z poleceniem: zabezpieczenie dla dzielenia przez 0 
+	if (b == 0) {
+		cout << "Blad w funkcji! Nie mozna dzielic przez zero." << endl;
+		return 0; 
+	}
+	return a / b; // Zwraca wynik dzielenia
+}*/
+
+//****zadanie_10****
+#include <iostream>
+using namespace std;
+
+// prototypy funkcji 
+double suma(double liczba_skladnikow);       // Wersja 1: oblicza i ZWRACA sumę (dlatego double)
+void wartosc_sumy(double liczba_skladnikow); // Wersja 2: oblicza i OD RAZU WYŚWIETLA sumę (dlatego void)
+
+
+int main() {
+	
+	double liczba_skladnikow;
+	cout << "Podaj ile masz skladnikow: ";
+	cin >> liczba_skladnikow;
+
+	//wersja 1: funkcja zwraca wynik wiec trzeba go wyswietlić w main
+	double wynik_wersja1 = suma(liczba_skladnikow);
+	cout << "Suma skladnikow to: " << wynik_wersja1 << endl;
+
+	//wersja 2: funckja nic nie zwraca, sama wszytsko wyswietli
+	wartosc_sumy(liczba_skladnikow);
+	
+	return 0;
+}
+// wersja 1: przyjmuje argument, pyta o liczby i zwraca sume
+double suma(double liczba_skladnikow) { 
+	double suma_liczb = 0;
+	double aktualny_skladnik;
+
+	for (int i = 0; i < liczba_skladnikow; i++) {
+		cout << "Podaj sklanik nr " << i + 1 << ": ";
+		cin >> aktualny_skladnik;
+		suma_liczb = suma_liczb + aktualny_skladnik;
+	}
+	return suma_liczb; // zwracamy do mian
+}
+// wersja 2: przyjmuje argument, pyta o liczby ale nic nie zwraca --> sama wyświetla wynik
+void wartosc_sumy(double liczba_skladnikow) {
+	double suma_liczb = 0;
+	double aktualny_skladnik;
+	
+	for (int i = 0; i < liczba_skladnikow; i++) {
+		cout << "Podaj sklanik nr " << i + 1 << ": ";
+		cin >> aktualny_skladnik;
+		suma_liczb = suma_liczb + aktualny_skladnik;
+	}
+	cout << "Wyliczona suma to " << suma_liczb << endl;
 }
