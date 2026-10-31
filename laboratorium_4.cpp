@@ -384,6 +384,7 @@ double dzielenie(double a, double b) {
 }*/
 
 //****zadanie_10****
+/*
 #include <iostream>
 using namespace std;
 
@@ -430,4 +431,70 @@ void wartosc_sumy(double liczba_skladnikow) {
 		suma_liczb = suma_liczb + aktualny_skladnik;
 	}
 	cout << "Wyliczona suma to " << suma_liczb << endl;
+} */
+
+//****zadanie_11****
+
+/* #include <iostream>
+using namespace std;
+
+double obwod_prostokata(double bok1, double bok2); // prototyp funkcji
+
+int main() {
+	double bok1, bok2;
+    
+	cout << "Podaj dlugosc pierwszego boku prostokata: ";
+	cin >> bok1;
+	cout << "Podaj dlugosc drugiego boku prostokata: ";
+	cin >> bok2;
+
+	double wynik = obwod_prostokata(bok1, bok2);// wywołanie funkcji
+	cout << "Obwod podanego prostokata to " << wynik << endl;
+	
+	return 0;
 }
+double obwod_prostokata(double bok1, double bok2) { // definicja funkcji
+	double obwod = 2*bok1 + 2*bok2;
+	return obwod;
+ } */
+
+//****zadanie_12**** // funckja która liczy obj prostopadłościanu z krawędzi
+
+/* 
+#include <iostream>
+using namespace std;
+
+void objetosc_prostopadloscianu(); // prototyp funkcji (funkcja bezargumentowa)
+
+int main() {
+	
+	objetosc_prostopadloscianu(); // wywołanie funkcji
+
+	return 0;
+}
+void objetosc_prostopadloscianu() { // definicja funkcji
+	double bok1, bok2, wysokosc;
+
+	// pętla do-while wymusza od użytkownika podanie właściwej liczby dodatniej
+	do { 
+		cout << "Podaj dlugosc pierwszego boku (wieksza od 0): ";
+		cin >> bok1;
+	} while (bok1 <= 0);
+
+	do {
+		cout << "Podaj dlugosc drugiego boku (wieksza od 0): ";
+		cin >> bok2;
+	} while (bok2 <= 0);
+
+	do {
+		cout << "Podaj wysokosc bryly (wieksza od 0): ";
+		cin >> wysokosc;
+	} while (wysokosc <= 0);
+
+	double objetosc = bok1 * bok2 * wysokosc;
+	
+	cout << "Objetosc tego prostopadlosianu wynosi: " << objetosc << endl;
+
+} */
+
+//****zadanie_13****
