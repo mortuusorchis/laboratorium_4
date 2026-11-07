@@ -665,7 +665,7 @@ int licznik_szczescia(int numerek) {
 	
 } */
 //****zadanie_17****
-
+/*
 #include <iostream>
 using namespace std;
 
@@ -697,4 +697,43 @@ int nieparzyste(int n) {
     n = (n - 1) / 2;
 	
 return n;
+} */
+
+//****zadanie_18****
+#include <iostream>
+using namespace std;
+
+int wynik1(int a);
+
+
+int main() {
+	int a;
+	cout << "Podaj liczbe calkowita: " << endl;
+	cin >> a;
+	
+	int wynik = wynik1(a);
+
+	cout << "Wynik = " << wynik << endl;
+
+	return 0;
+
+}
+int wynik1(int a) {
+	
+	if (a % 6 == 0) {
+	    cout << "Zwracam 0" << endl;
+		return 0;
+	}
+	else if (a % 3 == 0) {
+		cout << "Zwracam szescian liczby" << endl;
+		return  a * a * a;
+    }
+	else if (a % 2 == 0) {
+		cout << "Zwracam kwadrat liczby" << endl;
+        return a * a;
+	}
+	else {
+		cout << "Liczba nie jest podzielna ani przez 2 ani przez 3" << endl;
+		return a;
+	}
 }
