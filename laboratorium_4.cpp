@@ -498,7 +498,10 @@ void objetosc_prostopadloscianu() { // definicja funkcji
 } */
 
 //****zadanie_13****
-#include <iostream>
+
+//wesja z funkcją typu void
+
+/*#include <iostream>
 using namespace std;
 
 void axa_b_razy(int a, int b); // prototyp funkcji typu void 
@@ -528,4 +531,170 @@ void axa_b_razy(int a, int b)
 	}
 
 	cout << "Wynik = " << wynik << endl;
+}*/
+// wersja z funkcją typu  int
+
+/*#include <iostream>
+using namespace std;
+
+int axa_b_razy(int a, int b);
+
+int main() {
+	int a, b;
+
+	cout << "Podaj wartosc a: ";
+	cin >> a;
+
+	cout << "Podaj wartosc b: ";
+	cin >> b;
+
+	int wynik = axa_b_razy(a, b);
+	
+	cout << "Wynik = " << wynik;
+	return 0;
+}
+int axa_b_razy(int a, int b) {
+	int wynik = 1;
+	for (int i = 0; i < b; i++){
+		
+		wynik = wynik * a;
+	}
+	return wynik;
+} */
+
+//****zadanie_14****
+/*#include <iostream>
+using namespace std;
+
+int n_silnia(int n);
+
+int main() {
+	int n;
+	
+	cout << "Podaj liczbe naturalna n: ";
+	cin >> n;
+
+	int wynik = n_silnia(n);
+	cout << "n! wynosi: " << wynik;
+	return 0;
+}
+
+int n_silnia(int n)
+{
+	int wynik = 1; // zmienna przechowująca aktualny wynik silni
+
+	for (int i = 1; i <= n; i++)
+	{
+		wynik = wynik * i; // mnożenie wyniku przez kolejne liczby od 1 do n
+	}
+
+	return wynik;
+} */
+
+//****zadanie_15****
+/*#include <iostream>
+#include <cmath>
+using namespace std;
+
+int _2_do_n(int n);
+
+int main() {
+	int n;
+	cout << "Podaj liczbe n: ";
+	cin >> n;
+	int wynik = _2_do_n(n);
+
+		cout << "2 do potegi " << n << "to: " << wynik;
+		return 0;
+
+}
+
+int _2_do_n(int n) {
+	int wynik = 1;
+
+	for (int i = 0; i < n; i++)
+	{
+		wynik *= 2; // 2^n
+
+	}
+	
+	//int _2_do_n(int n) { // z funkcją biblioteczną
+    //return pow(2, n);}
+	
+	return wynik;
+}*/
+
+//****zadanie_16****
+/* #include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int licznik_szczescia(int numerek);
+
+
+int main() {
+	
+	srand(time(NULL));
+
+	int numerek;
+	cout << "Podaj swoj szczesliwy numerek z przedzialu [1,10] : ";
+	cin >> numerek;
+
+	int wynik = licznik_szczescia(numerek);
+	
+
+	cout << "Szczesliwy numerek wystapil " << wynik << " razy." << endl;
+
+	cout << "Stanowi to "<< wynik * 100.0 / 10 << "% wszystkich losowan.";
+	return 0;
+}
+
+int licznik_szczescia(int numerek) {
+	
+	int trafienia = 0;
+
+	for (int i = 0; i < 10; i++) {
+		int liczba = rand() % 10 + 1;
+		cout << liczba << " ";
+		if (liczba == numerek) {
+			trafienia++;
+        }
+	}
+	return trafienia;
+	
+} */
+//****zadanie_17****
+
+#include <iostream>
+using namespace std;
+
+int parzyste(int n);
+int nieparzyste(int n);
+
+int main() {
+	int wynik;
+	for (int n = 1; n <= 100; n++) {
+		
+		if (n % 2 == 0) {
+			wynik = parzyste(n);
+		}
+		else {
+			wynik = nieparzyste(n);
+		}
+		cout << "n = " << n << ", wynik = " << wynik << endl;
+	}
+return 0;
+}
+
+int parzyste(int n) {
+    n = n / 2;
+	
+return n;
+}
+
+int nieparzyste(int n) {
+    n = (n - 1) / 2;
+	
+return n;
 }
