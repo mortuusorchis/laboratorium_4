@@ -498,3 +498,34 @@ void objetosc_prostopadloscianu() { // definicja funkcji
 } */
 
 //****zadanie_13****
+#include <iostream>
+using namespace std;
+
+void axa_b_razy(int a, int b); // prototyp funkcji typu void 
+
+int main()
+{
+	int a, b;
+
+	cout << "Podaj wartosc a: ";
+	cin >> a;
+
+	cout << "Podaj wartosc b: ";
+	cin >> b;
+
+	axa_b_razy(a, b); // wywołanie funkcji 
+
+	return 0;
+}
+
+void axa_b_razy(int a, int b)
+{
+	int wynik = 1;
+
+	for (int i = 0; i < b; i++)
+	{
+		wynik = wynik * a;
+	}
+
+	cout << "Wynik = " << wynik << endl;
+}
