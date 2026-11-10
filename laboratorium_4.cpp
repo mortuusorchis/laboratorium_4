@@ -41,7 +41,7 @@ void tabliczka() {// definicja funkcji
 			}
 			cout << endl;
 		}
-		return; // nie może być return 0, bo void jest funkcją, która nic nie zwraca!!
+		
 	} */
 	
 //****zadanie_3**** 
